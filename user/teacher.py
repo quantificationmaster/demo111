@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, session, request, redirect
+from flask import Blueprint, render_template, session, request, redirect,g
 from exts import db
 from models import Teacher,Course,Student
 from flask import url_for
@@ -6,18 +6,12 @@ from flask import url_for
 tea = Blueprint("teacher", __name__, url_prefix='/')
 
 
-@tea.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'GET':
-        return render_template('login.html')
-    user = request.form.get('user')
-    pwd = request.form.get('pwd')
-    if user == 'kx' and pwd == '123':
-        session['xxx'] = 'kx'
-        return redirect(f'/teacher/{user}')
-    error = '用户名或密码错误'
-    return render_template('login.html', error=error)
 
+
+
+@tea.route('/addclass')
+def addclass():
+    pass
 
 @tea.route('/teacher/<user>')
 def index(user):

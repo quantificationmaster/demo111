@@ -7,13 +7,21 @@ import config
 from exts import db
 from models import Teacher,Course,Student
 from flask_migrate import Migrate
+from user.login import login
+from user.rrr import r1
 
 
 
 app = Flask(__name__)
-app.config.from_object(config)
-app.secret_key='123123'
 app.register_blueprint(tea)
+app.register_blueprint(login)
+app.register_blueprint(r1)
+app.config.from_object(config)
+app.secret_key='123123asdsasdasd'
+
+
+
+
 
 
 db.init_app(app)
