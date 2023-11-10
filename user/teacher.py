@@ -9,10 +9,6 @@ tea = Blueprint("teacher", __name__, url_prefix='/')
 
 
 
-@tea.route('/addclass')
-def addclass():
-    pass
-
 @tea.route('/teacher/<user>')
 def index(user):
     results = Teacher.query.filter_by(teachername=user).first()
