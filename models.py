@@ -24,6 +24,13 @@ class Student(db.Model):
     scid=db.Column(db.Integer,db.ForeignKey("course.id"))
     latecount=db.Column(db.Integer)
 
+class Late(db.Model):
+    __tablename__="late"
+    id=id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    coursename=db.Column(db.String(100), nullable=False)
+    studentname=db.Column(db.String(100), nullable=False)
+    lateday=db.Column(db.String(100), nullable=False)
+
 
 
 

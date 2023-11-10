@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>迟到信息</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>课程号</th>
+        <th>学生名</th>
+        <th>迟到日期</th>
+    </tr>
+    </thead>
+    <tbody>
+{% for k in result %}
+    <tr>
+    <td>{{ k.coursename }}</td>
+    <td >{{k.studentname }}</td>
+    <td>{{ k.lateday }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
